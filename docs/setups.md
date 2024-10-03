@@ -1,6 +1,14 @@
 ## Setups
 
-This is some examples of content tabs.
+The following astrophysical setups (initial conditions) are available for use with the sailfish code:
+
+* [Ring - Pringle](#ring)
+* [Steady Disk](#steady)
+* [KITP](#kitp)
+
+### Ring
+
+### Steady Disk
 
 ### KITP
 

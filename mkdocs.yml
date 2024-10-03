@@ -8,8 +8,12 @@ theme:
   icon:
     logo: simple/fishshell
   features:
-    - navigation.tabs
+    - navigation.tracking
     - navigation.footer
+    - navigation.sections
+    - navigation.path
+    - navigation.top
+    - toc.integrate
   palette:
     # Dark Mode
     - scheme: slate
@@ -48,6 +52,9 @@ markdown_extensions:
       alternate_style: true
   - admonition
   - pymdownx.details
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
 
 extra:
   social:
