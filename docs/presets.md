@@ -2,7 +2,7 @@
 
 ## Ring
 
-```title="ring.cfg"
+```cfg title="ring.cfg"
 fold = 1
 rk = 1
 beta = 5.0/3.0
@@ -31,7 +31,7 @@ central_object = single
 
 ### central_object = single
 
-```title="steady.cfg"
+```cfg title="steady.cfg"
 fold = 1
 rk = 1
 beta = 0
@@ -65,7 +65,7 @@ central_object = single
 
 ### central_object = binary
 
-```title="santa_barbara.cfg"
+```cfg title="santa_barbara.cfg"
 fold = 1
 rk = 1
 beta = 0.00
@@ -92,7 +92,7 @@ central_object = binary
 
 ### central_object = merger
 
-```title="inspiral.cfg"
+```cfg title="inspiral.cfg"
 fold = 1
 rk = 1
 beta = 0

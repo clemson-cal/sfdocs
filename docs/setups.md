@@ -3,7 +3,7 @@
 The following astrophysical setups (initial conditions) are available for use with the sailfish code:
 
 * [Ring - Pringle](#ring)
-* [Steady Disk](#steady)
+* [Steady Disk](#steady-disk)
 * [KITP](#kitp)
 
 ### Ring
