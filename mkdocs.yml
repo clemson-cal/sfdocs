@@ -1,5 +1,5 @@
 site_name: Sailfish-v0.8 Documentation
-site_url: https://sailfish.github.io/
+site_url: https://akhiln.github.io/sfdocs/
 theme:
   name: material
   font:
