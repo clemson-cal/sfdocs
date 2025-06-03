@@ -1,73 +1,194 @@
 # Sailfish-v0.8
 
-This project involves the development of a 2D hydrodynamics code for simulating fluid dynamics on a cylindrical/cartesian grid. The code includes advanced numerical schemes such as the Piecewise Linear Method (PLM) and handles both inflow and outflow boundary conditions. It is designed for high-resolution simulations, particularly useful in astrophysical contexts.
+!!! abstract "Project Overview"
+    A 2D hydrodynamics code for simulating fluid dynamics on cylindrical/cartesian grids. Designed for high-resolution astrophysical simulations with advanced numerical schemes.
 
-[Source Code - Github](https://github.com/clemson-cal/sailfish-v0.8)
+[🚀 **Source Code - GitHub**](https://github.com/clemson-cal/sailfish-v0.8){ .md-button .md-button--primary }
 
-## Features
-- Piecewise Linear Method with a minmod slope limiter for 2nd order accuracy
-- Godunov-type Riemann solver for shock capturing
-- Inflow and outflow boundary conditions
-- MPI parallelization for efficient computation on multiple cores
-- Support for both cylindrical and cartesian grids
-- 2D visualization of simulation results using Matplotlib
-- Based on the VAPOR C++ library
-- Concise and expressive functional programming style
-- Supports azimuthal mesh rotation [rigid]
-- Supports radial mesh contraction
-- Fifth order WENO reconstruction (WIP)
-- Output results in HDF5 format
+---
 
-## Getting Started
-- Clone the repository with __vapor__ submodule:
+## ✨ Features
 
-`git clone --recurse-submodules git@github.com:clemson-cal/sailfish-v0.8.git`
+<div class="grid cards" markdown>
 
-    1. gcc version 10 or higher is required
-    2. Install the python plotting dependencies using the requirements.txt file
+-   :material-chart-line-variant: **Advanced Numerics**
+    
+    ---
+    
+    - Piecewise Linear Method with minmod slope limiter
+    - HLLE Riemann solver for shock capturing  
+    - 2nd order accuracy with TVD properties
 
-- Setup the project.json and system.json files for the vapor library:
+-   :material-border-none-variant: **Boundary Conditions**
+    
+    ---
+    
+    - Flexible inflow and outflow boundaries
+    - Periodic azimuthal conditions
+    - Customizable sink regions
 
-```json title="project.json"
-{
-	"src": "src",
-	"bin": "bin",
-	"build": "build",
-	"vapor": "vapor",
-	"programs": {
-		"sailfish": {
-			"deps": ["hdf5"]
-		}
-	}
-}
-```
-```json title="system.json"
-{
-    "modes": ["dbg", "cpu", "omp", "gpu"],  // "gpu" mode requires CUDA support
-    "libs": [],
-    "omp_flags": "-Xpreprocessor -fopenmp",
-    "lomp": "-lgomp",
-    "nvcc_ccbin": "c++"
-}
-```
-??? warning "gpu mode and lomp flag"
+-   :material-cpu-64-bit: **High Performance**
+    
+    ---
+    
+    - GPU acceleration via VAPOR library
+    - OpenMP parallelization 
+    - Optimized for modern hardware
 
-    You would need CUDA support for the "gpu" mode to work. If you don't have CUDA support, you can remove the "gpu" mode from the system.json file.
-    If you are using a Mac with Apple Silicon, you would need to install the libomp library and set the "lomp" flag in the system.json file to "-lomp".
-    For Linux machines, you can install the libomp library and set the "lomp" flag in the system.json file to "-lgomp".
+-   :material-grid: **Mesh Flexibility**
+    
+    ---
+    
+    - Cartesian and polar coordinate systems
+    - Rigid mesh rotation capabilities
+    - Adaptive radial contraction
 
-- Configure the build (place the __configure__ file within the vapor library in your main work directory):
+-   :material-telescope: **Astrophysical Models**
+    
+    ---
+    
+    - Single, binary, and merger scenarios
+    - Viscous disk physics (α-model)
+    - Gravitational wave inspiral dynamics
 
-    run `./configure`
+-   :material-file-chart: **Data Output**
+    
+    ---
+    
+    - HDF5 format for efficient storage
+    - Comprehensive diagnostic outputs
+    - Time series and checkpoint data
 
-- Compile the code:
+</div>
 
-    1. For __debug__ mode: `make dbg`
-    2. For __cpu__ mode: `make cpu`
-    3. For __openmp__ mode: `make omp`
-    4. For __gpu__ mode: `make gpu`
+---
 
-- Test the code:
+## 🚀 Getting Started
 
-    __For a dbg build__: run `./bin/sailfish_dbg presets/ring.cfg`
+!!! tip "Quick Setup"
+    Follow these steps to get Sailfish running on your system.
+
+### Prerequisites
+
+!!! warning "Requirements"
+    - **GCC** version 10 or higher
+    - **CUDA** support (optional, for GPU mode)
+    - **Python** dependencies for visualization
+
+### Installation
+
+=== "Clone Repository"
+    ```bash
+    git clone --recurse-submodules git@github.com:clemson-cal/sailfish-v0.8.git
+    cd sailfish-v0.8
+    ```
+
+=== "Configure Vapor"
+    Create the required configuration files:
+    
+    ```json title="project.json"
+    {
+        "src": "src",
+        "bin": "bin", 
+        "build": "build",
+        "vapor": "vapor",
+        "programs": {
+            "sailfish": {
+                "deps": ["hdf5"]
+            }
+        }
+    }
+    ```
+    
+    ```json title="system.json"
+    {
+        "modes": ["dbg", "cpu", "omp", "gpu"],
+        "libs": [],
+        "omp_flags": "-Xpreprocessor -fopenmp",
+        "lomp": "-lgomp",
+        "nvcc_ccbin": "c++"
+    }
+    ```
+
+=== "Build & Test"
+    ```bash
+    # Configure build system
+    ./configure
+    
+    # Compile (choose your target)
+    make cpu    # CPU version
+    make omp    # OpenMP version  
+    make gpu    # GPU version (requires CUDA)
+    
+    # Test installation
+    ./bin/sailfish_dbg presets/steady.cfg
+    ```
+
+!!! example "Platform Notes"
+    
+    === "🖥️ Linux"
+        ```bash
+        # Install OpenMP
+        sudo apt install libomp-dev
+        # Use: "lomp": "-lgomp" 
+        ```
+    
+    === "🍎 macOS (Apple Silicon)" 
+        ```bash
+        # Install OpenMP via Homebrew
+        brew install libomp
+        # Use: "lomp": "-lomp"
+        ```
+    
+    === "🪟 Windows"
+        Windows support via WSL2 recommended.
+
+---
+
+## 📊 Key Capabilities
+
+!!! success "Simulation Types"
+
+    | Setup Type | Description | Use Case |
+    |------------|-------------|----------|
+    | **Ring** | Viscous spreading ring | Method validation |
+    | **Steady** | Equilibrium disk | Long-term evolution |
+    | **KITP** | Binary disk interaction | Santa-Barbara setup |
+
+!!! info "Performance Metrics" 
+    Typical performance on modern hardware:
+    
+    - **GPU**: ~5B zones/second on 5x H100's for a binary simulation with dx = 1e-3
+
+---
+
+## 🔗 Quick Links
+
+<div class="grid cards" markdown>
+
+-   [:material-book-open-page-variant: **Documentation**](setups.md)
+    
+    ---
+    
+    Learn about different simulation setups
+
+-   [:material-code-braces: **Code Examples**](code-examples.md)
+    
+    ---
+    
+    Explore implementation details
+
+-   [:material-math-integral: **Numerical Methods**](numerical-methods.md)
+    
+    ---
+    
+    Understand the algorithms
+
+-   [:material-cog: **Configuration**](definitions.md)
+    
+    ---
+    
+    Configure your simulations
+
+</div>
 

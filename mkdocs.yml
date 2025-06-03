@@ -14,8 +14,10 @@ theme:
     - navigation.path
     - navigation.top
     - toc.integrate
+    - content.code.copy
+    - content.tabs.link
   palette:
-    # Dark Mode
+    # Dark Mode
     - scheme: slate
       toggle:
         icon: material/weather-sunny
@@ -34,6 +36,9 @@ theme:
 
 markdown_extensions:
   - attr_list
+  - md_in_html
+  - pymdownx.arithmatex:
+      generic: true
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
@@ -56,9 +61,14 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
 
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
 extra:
   social:
     - icon: simple/github
       link: https://github.com/clemson-cal/sailfish-v0.8/
 
-copyright: Copyright &copy; 2024 Clemson-CAL      
+copyright: Copyright &copy; 2025 Clemson-CAL      
