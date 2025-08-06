@@ -14,8 +14,11 @@ nav:
   - Home: index.md
   - Getting Started:
     - Installation & Setup: setups.md
-    - Configuration: definitions.md
+    - Basic Configuration: definitions.md
     - Preset Configurations: presets.md
+  - Configuration Reference:
+    - Complete Parameter Guide: configuration.md
+    - Science Products & Timeseries: products-timeseries.md
   - Documentation:
     - Numerical Methods: numerical-methods.md
     - Code Examples: code-examples.md
@@ -33,15 +36,9 @@ theme:
     - navigation.sections
     - navigation.path
     - navigation.top
-    - navigation.expand
-    - navigation.instant
-    - navigation.instant.prefetch
     - toc.integrate
-    - toc.follow
     - content.code.copy
-    - content.code.select
     - content.tabs.link
-    - content.tooltips
     # Search features
     - search.highlight
     - search.suggest
@@ -90,6 +87,9 @@ markdown_extensions:
   - def_list
   - pymdownx.tasklist:
       custom_checkbox: true
+
+extra_css:
+  - stylesheets/extra.css
 
 extra_javascript:
   - javascripts/mathjax.js

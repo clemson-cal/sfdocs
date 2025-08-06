@@ -91,6 +91,7 @@ return 0.25 * fabs(sign(a) + sign(b)) * (sign(a) + sign(c)) * minabs(a, b, c);
 !!! tip "Adaptive Methods"
     
     **CFL Condition:**
+    
     $$\Delta t = C_{CFL} \cdot \min\left(\frac{\Delta x}{|u| + c}\right)$$
     
     where $C_{CFL} \leq 0.4$ ensures numerical stability.
