@@ -23,8 +23,8 @@ nav:
 theme:
   name: material
   font:
-    text: Lato
-    code: Fira Code
+    text: Roboto
+    code: Roboto Mono
   icon:
     logo: simple/fishshell
   features:
@@ -33,29 +33,35 @@ theme:
     - navigation.sections
     - navigation.path
     - navigation.top
+    - navigation.expand
+    - navigation.instant
+    - navigation.instant.prefetch
     - toc.integrate
+    - toc.follow
     - content.code.copy
+    - content.code.select
     - content.tabs.link
+    - content.tooltips
     # Search features
     - search.highlight
     - search.suggest
     - search.share
   palette:
-    # Dark Mode
+    # Default to Dark Mode
     - scheme: slate
       toggle:
-        icon: material/weather-sunny
-        name: Dark mode
+        icon: material/brightness-7
+        name: Switch to light mode
       primary: black
-      accent: deep purple
+      accent: cyan
 
-    # Light Mode
+    # Light Mode (secondary option)
     - scheme: default
       toggle:
-        icon: material/weather-night
-        name: Light mode
-      primary: black
-      accent: deep purple
+        icon: material/brightness-4
+        name: Switch to dark mode
+      primary: grey
+      accent: deep orange
 
 
 markdown_extensions:
@@ -92,7 +98,9 @@ extra_javascript:
 
 extra:
   social:
-    - icon: simple/github
+    - icon: fontawesome/brands/github
       link: https://github.com/clemson-cal/sailfish-v0.8/
+      name: GitHub Repository
+  generator: false
 
 copyright: Copyright &copy; 2025 Clemson-CAL      

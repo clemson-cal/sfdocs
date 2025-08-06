@@ -5,7 +5,7 @@
 
 ---
 
-## 🧮 Supported Methods
+## Supported Methods
 
 ### Riemann HLLE Solver
 
@@ -86,7 +86,7 @@ return 0.25 * fabs(sign(a) + sign(b)) * (sign(a) + sign(c)) * minabs(a, b, c);
     \end{align}$$
     
 
-## 🔬 Advanced Features
+## Advanced Features
 
 !!! tip "Adaptive Methods"
     

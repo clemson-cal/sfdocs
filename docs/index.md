@@ -3,11 +3,11 @@
 !!! abstract "Project Overview"
     A 2D hydrodynamics code for simulating fluid dynamics on cylindrical/cartesian grids. Designed for high-resolution astrophysical simulations with advanced numerical schemes.
 
-[🚀 **Source Code - GitHub**](https://github.com/clemson-cal/sailfish-v0.8){ .md-button .md-button--primary }
+[**Source Code - GitHub**](https://github.com/clemson-cal/sailfish-v0.8){ .md-button .md-button--primary }
 
 ---
 
-## ✨ Features
+## Features
 
 <div class="grid cards" markdown>
 
@@ -63,7 +63,7 @@
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 !!! tip "Quick Setup"
     Follow these steps to get Sailfish running on your system.
@@ -126,26 +126,26 @@
 
 !!! example "Platform Notes"
     
-    === "🖥️ Linux"
+    === "Linux"
         ```bash
         # Install OpenMP
         sudo apt install libomp-dev
         # Use: "lomp": "-lgomp" 
         ```
     
-    === "🍎 macOS (Apple Silicon)" 
+    === "macOS (Apple Silicon)" 
         ```bash
         # Install OpenMP via Homebrew
         brew install libomp
         # Use: "lomp": "-lomp"
         ```
     
-    === "🪟 Windows"
+    === "Windows"
         Windows support via WSL2 recommended.
 
 ---
 
-## 📊 Key Capabilities
+## Key Capabilities
 
 !!! success "Simulation Types"
 
@@ -162,7 +162,7 @@
 
 ---
 
-## 🔗 Quick Links
+## Quick Links
 
 <div class="grid cards" markdown>
 

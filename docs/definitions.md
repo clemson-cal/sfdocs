@@ -64,7 +64,7 @@ where **β = ζ/μ** (bulk/dynamic viscosity ratio).
     | **Spreading ring** | `5/3` | Significant bulk viscosity |
 
 !!! success "Quick Reference"
-    * 💡 Use `tunits=-1` for orbital time units
-    * 🌟 Set `central_object=binary` for circumbinary disks  
-    * ⚖️ Choose `beta=0` for most disk simulations
+    * Use `tunits=-1` for orbital time units
+    * Set `central_object=binary` for circumbinary disks  
+    * Choose `beta=0` for most disk simulations
 

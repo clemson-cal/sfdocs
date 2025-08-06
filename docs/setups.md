@@ -129,13 +129,13 @@
 
 !!! success "Simulation Goals"
     
-    **🔬 Method Validation**: Use Ring setup with analytical solutions
+    **Method Validation**: Use Ring setup with analytical solutions
     
-    **🌌 Astrophysical Modeling**: Binary/merger setups for GW astronomy
+    **Astrophysical Modeling**: Binary/merger setups for GW astronomy
     
-    **⚙️ Parameter Studies**: Vary `nu`, `sink_size`, `rsoft` systematically
+    **Parameter Studies**: Vary `nu`, `sink_size`, `rsoft` systematically
     
-    **📊 Comparative Analysis**: Different central object configurations
+    **Comparative Analysis**: Different central object configurations
 
 ---
 
