@@ -12,16 +12,16 @@ plugins:
 # Site Navigation
 nav:
   - Home: index.md
-  - Getting Started:
+  - Overview:
     - Installation & Setup: setups.md
     - Basic Configuration: definitions.md
     - Preset Configurations: presets.md
   - Configuration Reference:
     - Complete Parameter Guide: configuration.md
     - Science Products & Timeseries: products-timeseries.md
-  - Documentation:
-    - Numerical Methods: numerical-methods.md
-    - Code Examples: code-examples.md
+  - Code Examples: code-examples.md
+  - Tutorials:
+    - Tutorial: tutorial.md
 
 theme:
   name: material
@@ -31,10 +31,13 @@ theme:
   icon:
     logo: simple/fishshell
   features:
+    - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.tracking
     - navigation.footer
     - navigation.sections
     - navigation.path
+    - navigation.indexes
     - navigation.top
     - toc.integrate
     - content.code.copy
