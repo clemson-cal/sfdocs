@@ -12,16 +12,16 @@ plugins:
 # Site Navigation
 nav:
   - Home: index.md
-  - Overview:
+  - Getting Started:
     - Installation & Setup: setups.md
     - Basic Configuration: definitions.md
     - Preset Configurations: presets.md
   - Configuration Reference:
     - Complete Parameter Guide: configuration.md
     - Science Products & Timeseries: products-timeseries.md
-  - Code Examples: code-examples.md
-  - Tutorials:
-    - Tutorial: tutorial.md
+  - Documentation:
+    - Code Examples: code-examples.md
+  - Tutorials: tutorial.md
 
 theme:
   name: material
